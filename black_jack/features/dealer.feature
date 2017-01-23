@@ -1,0 +1,1 @@
+Feature: The dealer for the game of 21
