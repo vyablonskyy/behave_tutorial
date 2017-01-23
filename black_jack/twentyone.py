@@ -7,10 +7,9 @@ def _next_card():
     return random.choice(_cards)
 
 
-class Dealer():
+class Dealer:
     def __init__(self):
         self.hand = []
 
-    def new_round(self):
-        self.hand = [_next_card(), _next_card()]  # the _next_card() function will be defined as a top-level function
-                                                  # of the module, along with a definition of the cards
+    def new_round(self):                          # the _next_card() function will be defined as a top-level function
+        self.hand = [_next_card(), _next_card()]  # of the module, along with a definition of the cards

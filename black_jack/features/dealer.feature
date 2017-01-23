@@ -9,3 +9,18 @@ Feature: The dealer for the game of 21
     Then the dealer gives itself two cards
     # Think of a step as a task for Behave to execute
     # !!!The cycle is to write a test, see that it fails, and then write code to make the test pass
+
+  # Tableized tests
+  # The next game logic to test is that the dealer knows the point value of its hand
+  Scenario Outline: Get hand total
+    Given a <hand>
+    When the dealer sums the cards
+    Then the <total> is correct
+
+    Examples: Hands
+    | hand      | total |
+    | 5, 7      | 12    |
+    | 5, Q      | 15    |
+    | Q, Q, A   | 21    |
+    | Q, A      | 21    |
+    | A, A, A   | 13    |
