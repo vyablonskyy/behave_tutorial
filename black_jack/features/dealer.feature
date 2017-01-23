@@ -8,3 +8,4 @@ Feature: The dealer for the game of 21
     When the round starts
     Then the dealer gives itself two cards
     # Think of a step as a task for Behave to execute
+    # !!!The cycle is to write a test, see that it fails, and then write code to make the test pass
