@@ -35,3 +35,18 @@ def step_impl(context):
 def step_impl(context, hand):
     context.dealer = Dealer()
     context.dealer.hand = hand.split(',')
+
+# The angle brackets in the dealer.feature file are replaced with braces, and the hand parameter becomes an object that
+# is passed to the step, along with the context
+
+# Just like before, we create a new Dealer object, but this time we manually set the dealer's cards instead of
+# generating them randomly. Since the hand parameter is a simple string, we split the parameter to get a list
+
+@when('the dealer sums the cards')
+def step_impl(context):
+    context.dealer_total = context.dealer.get_hand_total()
+
+
+@then('the {total:d} is correct')
+def step_impl(context, total):
+    assert (context.dealer_total == total)
