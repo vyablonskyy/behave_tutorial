@@ -47,6 +47,6 @@ def step_impl(context):
     context.dealer_total = context.dealer.get_hand_total()
 
 
-@then('the {total:d} is correct')
+@then('the {total:d} is correct')  # ":d" is a shortcut to tell Behave to treat the parameter as an integer
 def step_impl(context, total):
     assert (context.dealer_total == total)
