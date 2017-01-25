@@ -11,7 +11,11 @@ Feature: The dealer for the game of 21
     # !!!The cycle is to write a test, see that it fails, and then write code to make the test pass
 
   # Tableized tests
+  # Often when writing tests we want to test the same behavior against many different parameters and check the results
   # The next game logic to test is that the dealer knows the point value of its hand
+  # Called a "Scenario Outline"
+  # It uses parameters in angle brackets <hand>, <total> that correspond to the headers of the table
+  # A table of inputs ("hand") and outputs ("total")
   Scenario Outline: Get hand total
     Given a <hand>
     When the dealer sums the cards

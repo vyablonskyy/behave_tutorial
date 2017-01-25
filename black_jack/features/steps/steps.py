@@ -27,3 +27,7 @@ def step_impl(context):
 @then('the dealer gives itself two cards')  # we still have access to the dealer,
 def step_impl(context):
     assert (len(context.dealer.hand) == 2)  # and we assert that the dealer has two cards in its hand
+
+
+# The steps well be similar to what we've seen before, but we'll now get to use the parametrized steps feature of Behave
+
