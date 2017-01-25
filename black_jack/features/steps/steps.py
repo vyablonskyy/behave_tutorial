@@ -31,3 +31,7 @@ def step_impl(context):
 
 # The steps well be similar to what we've seen before, but we'll now get to use the parametrized steps feature of Behave
 
+@given('a {hand}')
+def step_impl(context, hand):
+    context.dealer = Dealer()
+    context.dealer.hand = hand.split(',')
