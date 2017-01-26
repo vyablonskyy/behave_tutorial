@@ -42,6 +42,7 @@ def step_impl(context, hand):
 # Just like before, we create a new Dealer object, but this time we manually set the dealer's cards instead of
 # generating them randomly. Since the hand parameter is a simple string, we split the parameter to get a list
 
+
 @when('the dealer sums the cards')
 def step_impl(context):
     context.dealer_total = context.dealer.get_hand_total()
