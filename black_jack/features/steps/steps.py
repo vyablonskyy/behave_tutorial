@@ -29,6 +29,12 @@ def step_impl(context):
     assert (len(context.dealer.hand) == 2)  # and we assert that the dealer has two cards in its hand
 
 
+@given('a hand {total:d}')
+def step_impl(context, total):
+    context.dealer = Dealer()
+    context.total = total
+
+
 # The steps well be similar to what we've seen before, but we'll now get to use the parametrized steps feature of Behave
 
 @given('a {hand}')
