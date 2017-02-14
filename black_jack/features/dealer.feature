@@ -5,8 +5,8 @@ Feature: The dealer for the game of 21
   # "Then" - states the expected outcome - the dealer has two cards
   Scenario: Deal initial cards
     Given a dealer
-    When the round starts
-    Then the dealer gives itself two cards
+     When the round starts
+     Then the dealer gives itself two cards
     # Think of a step as a task for Behave to execute
     # !!!The cycle is to write a test, see that it fails, and then write code to make the test pass
 
@@ -18,13 +18,32 @@ Feature: The dealer for the game of 21
   # A table of inputs ("hand") and outputs ("total")
   Scenario Outline: Get hand total
     Given a <hand>
-    When the dealer sums the cards
-    Then the <total> is correct
+     When the dealer sums the cards
+     Then the <total> is correct
 
     Examples: Hands
-    | hand      | total |
-    | 5, 7      | 12    |
-    | 5, Q      | 15    |
-    | Q, Q, A   | 21    |
-    | Q, A      | 21    |
-    | A, A, A   | 13    |
+    | hand     | total |
+    | 5,7      | 12    |
+    | 5,Q      | 15    |
+    | Q,Q,A    | 21    |
+    | Q,A      | 21    |
+    | A,A,A    | 13    |
+
+  # Test to verify that the dealer plays by the rules
+  # The dealer must play "hit" until he or she has 17 or more points
+  Scenario Outline: Dealer plays by the rules
+    Given a hand <total>
+     When the dealer determines a play
+     Then the <play> is correct
+
+    Examples: Hands
+    | total | play  |
+    | 10    | hit   |
+    | 15    | hit   |
+    | 16    | hit   |
+    | 17    | stand |
+    | 18    | stand |
+    | 19    | stand |
+    | 20    | stand |
+    | 21    | stand |
+    | 22    | stand |
