@@ -47,3 +47,8 @@ Feature: The dealer for the game of 21
     | 20    | stand |
     | 21    | stand |
     | 22    | stand |
+
+  # When using parameters, the order matters
+  # Parametrized steps should be ordered from most restrictive to least restrictive
+  # If you do not do this, the correct step may not be matched by Behave
+  # To make this easier, group your step by type
