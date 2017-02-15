@@ -35,3 +35,9 @@ class Dealer:
 
     def get_hand_total(self):  # ability for the dealer to total it's cards
         return _hand_total(self.hand)
+
+    def determine_play(self, total):
+        if total < 17:
+            return 'hit'
+        else:
+            return 'stand'
