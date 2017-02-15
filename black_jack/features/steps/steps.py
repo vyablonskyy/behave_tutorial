@@ -35,6 +35,12 @@ def step_impl(context, total):
     context.total = total
 
 
+@when('the dealer determines a play')
+def step_impl(context):
+    context.dealer_play = context.dealer.determine_play(context.total)
+
+
+
 # The steps well be similar to what we've seen before, but we'll now get to use the parametrized steps feature of Behave
 
 @given('a {hand}')
