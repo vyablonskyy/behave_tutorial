@@ -40,6 +40,10 @@ def step_impl(context):
     context.dealer_play = context.dealer.determine_play(context.total)
 
 
+@then('the {play} is correct')
+def step_impl(context, play):
+    assert (context.dealer_play == play)
+
 
 # The steps well be similar to what we've seen before, but we'll now get to use the parametrized steps feature of Behave
 
