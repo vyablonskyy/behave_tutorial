@@ -20,7 +20,6 @@ def step_impl(context):
 # Since this step is a "given", we need to initialize our state.
 # We do that by creating a Dealer object, and attaching that object to the context
 
-
 # The steps well be similar to what we've seen before, but we'll now get to use the parametrized steps feature of Behave
 
 
@@ -61,6 +60,11 @@ def step_impl(context):
 @then('the dealer gives itself two cards')  # we still have access to the dealer,
 def step_impl(context):
     assert (len(context.dealer.hand) == 2)  # and we assert that the dealer has two cards in its hand
+
+
+@then('the dealer chooses a play')
+def step_impl(context):
+    assert (context.dealer.make_play() in ['stand', 'hit'])
 
 
 @then('the {total:d} is correct')  # ":d" is a shortcut to tell Behave to treat the parameter as an integer

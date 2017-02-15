@@ -52,3 +52,12 @@ Feature: The dealer for the game of 21
   # Parametrized steps should be ordered from most restrictive to least restrictive
   # If you do not do this, the correct step may not be matched by Behave
   # To make this easier, group your step by type
+
+  # We've proven to ourselves with tests that dealer can deal itself cards, determine its hand total,
+  # and make a play separately, but there's no code to tie this together
+  # let's add a test for this behaviour
+
+  Scenario: A Dealer can always play
+    Given a dealer
+     When the round starts
+     Then the dealer chooses a play
