@@ -41,3 +41,6 @@ class Dealer:
             return 'hit'
         else:
             return 'stand'
+
+    def make_play(self):
+        return self.determine_play(self.get_hand_total())
