@@ -5,7 +5,6 @@ from twentyone import *
 
 
 # Behave steps use annotation that match the names of the phases
-# TODO group steps in correct order from most restrictive to least restrictive
 
 
 @given('a dealer')
